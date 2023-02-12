@@ -1,0 +1,46 @@
+version: '2'
+
+networks:
+  basic-tier:
+    driver: bridge
+
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: user
+      POSTGRES_DB: numeric_api
+    networks:
+      - basic-tier
+  redis:
+    image: 'bitnami/redis:latest'
+    container_name: redis
+    ports:
+      - '6379:6379'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    networks:
+      - basic-tier
+  app:
+    container_name: numeric-api
+    image: numeric-api:latest
+    #image: ezequielcoronel/numeric-repo:numeric-api
+    depends_on:
+      - redis
+      - postgres
+    environment:
+      REDIS_DB_HOST: redis
+      REDIS_DB_PORT: 6379
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: user
+      DB_PASSWORD: secret
+      CLIENT_BASE_URL: https://mocki.io/v1/858d2783-8c82-4c7c-ae21-248cf7dfdd7b
+    ports:
+      - 8080:8080
+    networks:
+      - basic-tier

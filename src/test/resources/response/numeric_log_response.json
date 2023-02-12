@@ -1,0 +1,89 @@
+{
+  "size": 5,
+  "number_of_elements": 5,
+  "total_pages": 2,
+  "total_elements": 6,
+  "content": [
+    {
+      "id": 1,
+      "method": "GET",
+      "url": "/path1",
+      "request_headers": "headers_request",
+      "request": null,
+      "response": null,
+      "response_status": 200,
+      "response_headers": "headers_response",
+      "duration": 3,
+      "created_at": "11/02/2023 11:00:01"
+    },
+    {
+      "id": 2,
+      "method": "POST",
+      "url": "/path2",
+      "request": null,
+      "response": null,
+      "request_headers": "headers_request",
+      "response_status": 500,
+      "response_headers": "headers_response",
+      "duration": 3,
+      "created_at": "11/02/2023 10:00:01"
+    },
+    {
+      "id": 3,
+      "method": "PUT",
+      "url": "/path3",
+      "request": null,
+      "response": null,
+      "request_headers": "headers_request",
+      "response_status": 400,
+      "response_headers": "headers_response",
+      "duration": 3,
+      "created_at": "11/02/2023 12:00:01"
+    },
+    {
+      "id": 4,
+      "method": "DELETE",
+      "url": "/path4",
+      "request": null,
+      "response": null,
+      "request_headers": "headers_request",
+      "response_status": 200,
+      "response_headers": "headers_response",
+      "duration": 3,
+      "created_at": "11/02/2023 11:00:01"
+    },
+    {
+      "id": 5,
+      "method": "GET",
+      "url": "/path5",
+      "request": null,
+      "response": null,
+      "request_headers": "headers_request",
+      "response_status": 503,
+      "response_headers": "headers_response",
+      "duration": 3,
+      "created_at": "10/02/2023 11:00:01"
+    }
+  ],
+  "number": 0,
+  "pageable": {
+    "offset": 0,
+    "sort": {
+      "empty": true,
+      "unsorted": true,
+      "sorted": false
+    },
+    "paged": true,
+    "unpaged": false,
+    "page_number": 0,
+    "page_size": 5
+  },
+  "sort": {
+    "empty": true,
+    "unsorted": true,
+    "sorted": false
+  },
+  "first": true,
+  "last": false,
+  "empty": false
+}
